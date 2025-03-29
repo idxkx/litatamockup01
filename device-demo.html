@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>莉她 - 设备演示</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+        }
+
+        .device-container {
+            position: relative;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .iphone {
+            position: relative;
+            width: 430px;
+            height: 932px;
+            background-color: #111;
+            border-radius: 55px;
+            overflow: hidden;
+            box-shadow: 
+                0 50px 100px rgba(0, 0, 0, 0.25),
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                0 0 0 6px rgba(255, 255, 255, 0.05),
+                inset 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .iphone::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+            border-radius: 55px;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            border-radius: 45px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .dynamic-island {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 125px;
+            height: 37px;
+            background-color: #000;
+            border-radius: 20px;
+            z-index: 100;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .camera {
+            position: absolute;
+            top: 10px;
+            right: 35px;
+            width: 12px;
+            height: 12px;
+            background-color: #333;
+            border-radius: 50%;
+            box-shadow: inset 0 0 2px rgba(0, 0, 255, 0.8);
+            z-index: 4;
+        }
+
+        .camera::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 4px;
+            height: 4px;
+            background-color: rgba(120, 150, 255, 0.7);
+            border-radius: 50%;
+        }
+
+        .power-button {
+            position: absolute;
+            top: 240px;
+            right: -15px;
+            width: 4px;
+            height: 100px;
+            background-color: #222;
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        .volume-up {
+            position: absolute;
+            top: 180px;
+            left: -15px;
+            width: 4px;
+            height: 60px;
+            background-color: #222;
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        .volume-down {
+            position: absolute;
+            top: 260px;
+            left: -15px;
+            width: 4px;
+            height: 60px;
+            background-color: #222;
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        .action-button {
+            position: absolute;
+            top: 120px;
+            left: -15px;
+            width: 4px;
+            height: 40px;
+            background-color: #ff6b81;
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        .app-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 1;
+        }
+
+        .device-chrome {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .bottom-indicator {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 3px;
+            z-index: 3;
+        }
+
+        .controls {
+            margin-top: 40px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+        }
+
+        .control-btn {
+            padding: 12px 20px;
+            font-size: 14px;
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            flex: 0 1 auto;
+            white-space: nowrap;
+        }
+
+        .control-btn:hover {
+            background-color: #ff5773;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .control-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .device-info {
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .logo {
+            font-size: 20px;
+            color: #ff6b81;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            z-index: 5;
+            border-radius: 45px;
+            transition: opacity 1s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .apple-logo {
+            width: 80px;
+            height: 80px;
+            fill: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .iphone {
+                transform: scale(0.7);
+                margin: -100px auto;
+            }
+
+            .controls {
+                transform: scale(0.9);
+                margin-top: -60px;
+                gap: 8px;
+            }
+            
+            .control-btn {
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+        }
+
+        /* 设备状态效果 */
+        .power-off .screen {
+            background-color: #000 !important;
+        }
+        
+        .power-off .dynamic-island,
+        .power-off .camera,
+        .power-off .app-frame,
+        .power-off .bottom-indicator {
+            opacity: 0;
+        }
+        
+        /* 屏幕亮度调节 */
+        .brightness-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 4;
+            pointer-events: none;
+            border-radius: 45px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* 模拟锁屏 */
+        .lock-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #000;
+            z-index: 4;
+            border-radius: 45px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 0 40px;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        
+        .lock-screen.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .lock-screen-clock {
+            font-size: 76px;
+            font-weight: 200;
+        }
+        
+        .lock-screen-date {
+            font-size: 20px;
+            margin-top: -20px;
+        }
+        
+        .lock-screen-notification {
+            text-align: center;
+            width: 80%;
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+        }
+        
+        .lock-screen-notification h3 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+        
+        .lock-screen-notification p {
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .lock-screen-swipe {
+            font-size: 14px;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .lock-screen-swipe i {
+            margin-bottom: 5px;
+            font-size: 24px;
+        }
+        
+        .lock-screen-wallpaper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            border-radius: 45px;
+            overflow: hidden;
+        }
+        
+        .lock-screen-wallpaper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="device-container">
+        <div class="iphone" id="iphone">
+            <div class="power-button"></div>
+            <div class="volume-up"></div>
+            <div class="volume-down"></div>
+            <div class="action-button"></div>
+            <div class="screen">
+                <div class="loading" id="loading">
+                    <svg class="apple-logo" viewBox="0 0 170 170" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M127.805 90.725c-0.202-20.948 17.144-31.031 17.915-31.492-9.768-14.256-24.988-16.207-30.396-16.409-12.777-1.307-25.067 7.574-31.536 7.574-6.541 0-16.549-7.422-27.251-7.219-13.89 0.203-26.768 8.138-33.915 20.482-14.549 25.218-3.706 62.295 10.284 82.646 6.944 9.979 15.092 21.111 25.83 20.708 10.435-0.427 14.345-6.697 26.97-6.697 12.572 0 16.23 6.697 27.217 6.45 11.273-0.151 18.358-10.129 25.15-20.178 8.086-11.599 11.351-22.945 11.482-23.525-0.251-0.101-21.977-8.372-22.182-33.473M105.653 27.659c5.652-6.904 9.499-16.374 8.436-25.937-8.183 0.336-18.37 5.499-24.266 12.352-5.238 6.113-9.904 16.036-8.689 25.483 9.176 0.7 18.593-4.629 24.266-11.898"/>
+                    </svg>
+                </div>
+                <div class="brightness-overlay" id="brightnessOverlay"></div>
+                <div class="lock-screen" id="lockScreen">
+                    <div class="lock-screen-wallpaper">
+                        <img src="https://images.unsplash.com/photo-1604076913837-52ab5629fba9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="锁屏壁纸">
+                    </div>
+                    <div class="lock-screen-time">
+                        <div class="lock-screen-clock" id="lockScreenClock">12:30</div>
+                        <div class="lock-screen-date" id="lockScreenDate">星期四, 11月16日</div>
+                    </div>
+                    <div class="lock-screen-notification">
+                        <h3>莉她 · 今日搭配</h3>
+                        <p>今天有3种新的穿搭方案等您查看</p>
+                    </div>
+                    <div class="lock-screen-swipe">
+                        <i class="fas fa-chevron-up"></i>
+                        <span>向上滑动解锁</span>
+                    </div>
+                </div>
+                <div class="dynamic-island"></div>
+                <div class="camera"></div>
+                <iframe id="appFrame" class="app-frame" src="index.html"></iframe>
+                <div class="device-chrome"></div>
+                <div class="bottom-indicator"></div>
+            </div>
+        </div>
+        <div class="device-info">
+            <span class="logo">莉她</span> iPhone 16 Pro Max 演示
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="control-btn" id="reloadBtn"><i class="fas fa-redo-alt"></i> 重新加载</button>
+        <button class="control-btn" id="homeBtn"><i class="fas fa-home"></i> 首页</button>
+        <button class="control-btn" id="communityBtn"><i class="fas fa-share-alt"></i> 社区</button>
+        <button class="control-btn" id="profileBtn"><i class="fas fa-user"></i> 个人中心</button>
+        <button class="control-btn" id="powerBtn"><i class="fas fa-power-off"></i> 开关机</button>
+        <button class="control-btn" id="lockBtn"><i class="fas fa-lock"></i> 锁屏</button>
+    </div>
+
+    <script>
+        // 页面加载完成后显示应用
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('loading').classList.add('hidden');
+            }, 2000);
+            
+            // 初始化锁屏时间和日期
+            updateLockScreenTime();
+            setInterval(updateLockScreenTime, 60000);
+            
+            // 设置实体按钮事件
+            setupHardwareButtons();
+        };
+        
+        // 更新锁屏时间
+        function updateLockScreenTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('lockScreenClock').textContent = `${hours}:${minutes}`;
+            
+            const days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            const months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+            const dayOfWeek = days[now.getDay()];
+            const month = months[now.getMonth()];
+            const date = now.getDate();
+            
+            document.getElementById('lockScreenDate').textContent = `${dayOfWeek}, ${month}${date}日`;
+        }
+        
+        // 设置硬件按钮
+        function setupHardwareButtons() {
+            const powerButton = document.querySelector('.power-button');
+            const volumeUp = document.querySelector('.volume-up');
+            const volumeDown = document.querySelector('.volume-down');
+            const actionButton = document.querySelector('.action-button');
+            
+            powerButton.addEventListener('click', function() {
+                togglePower();
+            });
+            
+            volumeUp.addEventListener('click', function() {
+                adjustBrightness(-0.1);
+            });
+            
+            volumeDown.addEventListener('click', function() {
+                adjustBrightness(0.1);
+            });
+            
+            actionButton.addEventListener('click', function() {
+                document.getElementById('lockScreen').classList.toggle('active');
+            });
+        }
+        
+        // 调整亮度
+        function adjustBrightness(delta) {
+            const overlay = document.getElementById('brightnessOverlay');
+            let currentOpacity = parseFloat(getComputedStyle(overlay).opacity);
+            currentOpacity = Math.max(0, Math.min(0.8, currentOpacity + delta));
+            overlay.style.opacity = currentOpacity;
+        }
+        
+        // 切换电源状态
+        function togglePower() {
+            const iphone = document.getElementById('iphone');
+            iphone.classList.toggle('power-off');
+            
+            if(iphone.classList.contains('power-off')) {
+                document.getElementById('lockScreen').classList.remove('active');
+            }
+        }
+
+        // 重新加载按钮
+        document.getElementById('reloadBtn').addEventListener('click', function() {
+            const loading = document.getElementById('loading');
+            const appFrame = document.getElementById('appFrame');
+            
+            loading.classList.remove('hidden');
+            
+            setTimeout(function() {
+                appFrame.src = appFrame.src;
+                
+                setTimeout(function() {
+                    loading.classList.add('hidden');
+                }, 2000);
+            }, 500);
+        });
+        
+        // 电源按钮
+        document.getElementById('powerBtn').addEventListener('click', function() {
+            togglePower();
+        });
+        
+        // 锁屏按钮
+        document.getElementById('lockBtn').addEventListener('click', function() {
+            const lockScreen = document.getElementById('lockScreen');
+            lockScreen.classList.toggle('active');
+            
+            // 监听锁屏点击事件
+            if(lockScreen.classList.contains('active')) {
+                lockScreen.addEventListener('click', function unlockHandler() {
+                    lockScreen.classList.remove('active');
+                    lockScreen.removeEventListener('click', unlockHandler);
+                });
+            }
+        });
+        
+        // 首页按钮
+        document.getElementById('homeBtn').addEventListener('click', function() {
+            const loading = document.getElementById('loading');
+            const appFrame = document.getElementById('appFrame');
+            
+            loading.classList.remove('hidden');
+            
+            setTimeout(function() {
+                appFrame.src = 'index.html';
+                
+                setTimeout(function() {
+                    loading.classList.add('hidden');
+                }, 1500);
+            }, 300);
+        });
+        
+        // 社区按钮
+        document.getElementById('communityBtn').addEventListener('click', function() {
+            const loading = document.getElementById('loading');
+            const appFrame = document.getElementById('appFrame');
+            
+            loading.classList.remove('hidden');
+            
+            setTimeout(function() {
+                appFrame.src = 'community.html';
+                
+                setTimeout(function() {
+                    loading.classList.add('hidden');
+                }, 1500);
+            }, 300);
+        });
+
+        // 个人中心按钮
+        document.getElementById('profileBtn').addEventListener('click', function() {
+            const loading = document.getElementById('loading');
+            const appFrame = document.getElementById('appFrame');
+            
+            loading.classList.remove('hidden');
+            
+            setTimeout(function() {
+                appFrame.src = 'profile.html';
+                
+                setTimeout(function() {
+                    loading.classList.add('hidden');
+                }, 1500);
+            }, 300);
+        });
+    </script>
+</body>
+</html> 
