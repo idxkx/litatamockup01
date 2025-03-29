@@ -1,0 +1,371 @@
+/* 衣橱管理页面专用样式 */
+
+/* 分类标签栏 */
+.category-tabs {
+    display: flex;
+    overflow-x: auto;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 73px; /* 状态栏+导航栏高度 */
+    z-index: 90;
+    padding: 0 10px;
+    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch;
+}
+
+.category-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.category-tabs .tab {
+    flex: 0 0 auto;
+    padding: 12px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    position: relative;
+    white-space: nowrap;
+}
+
+.category-tabs .tab.active {
+    color: #ff6b81;
+}
+
+.category-tabs .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background-color: #ff6b81;
+    border-radius: 1px;
+}
+
+/* 衣物统计 */
+.wardrobe-stats {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background-color: #eee;
+}
+
+.stat-number {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ff6b81;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+}
+
+/* 筛选工具栏 */
+.filter-toolbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #666;
+}
+
+.filter-item i {
+    margin-right: 5px;
+}
+
+/* 衣物网格 */
+.wardrobe-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.clothing-item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.clothing-image {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+}
+
+.clothing-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-category {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+.clothing-info {
+    padding: 10px;
+}
+
+.clothing-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.clothing-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    background-color: #f0f0f0;
+    color: #666;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+
+.clothing-actions {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* 浮动添加按钮 */
+.floating-add-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff6b81;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(255, 107, 129, 0.3);
+    z-index: 90;
+}
+
+.floating-add-btn i {
+    font-size: 24px;
+}
+
+/* 添加衣物模态框 */
+.add-item-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* 默认隐藏 */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.add-item-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.close-modal {
+    font-size: 18px;
+    color: #999;
+}
+
+.modal-body {
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.image-upload-container {
+    width: 100%;
+    height: 160px;
+    background-color: #f9f9f9;
+    border: 1px dashed #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #999;
+}
+
+.upload-placeholder i {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.tag.selectable {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tag.selectable.selected {
+    background-color: #ff6b81;
+    color: white;
+}
+
+.season-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.season-option {
+    display: flex;
+    align-items: center;
+}
+
+.season-option input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.modal-footer {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.cancel-btn, .save-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #f0f0f0;
+    color: #666;
+    margin-right: 10px;
+}
+
+.save-btn {
+    background-color: #ff6b81;
+    color: white;
+}
+
+/* 响应式设计 */
+@media screen and (min-width: 768px) {
+    .wardrobe-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+} 

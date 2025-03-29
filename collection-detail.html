@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>收藏详情 - 莉她</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="collection-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 状态栏 -->
+    <div class="status-bar">
+        <div class="status-bar-time">14:30</div>
+        <div class="status-bar-icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="nav-bar">
+        <div class="back-button">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="page-title">我的收藏</div>
+        <div class="nav-actions">
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content-container">
+        <!-- 收藏集信息 -->
+        <div class="collection-header">
+            <div class="collection-cover">
+                <div class="collection-image-grid">
+                    <img src="images/collection1.jpg" alt="收藏封面" class="main-image">
+                    <div class="sub-images">
+                        <img src="images/collection2.jpg" alt="收藏项目">
+                        <img src="images/collection3.jpg" alt="收藏项目">
+                        <img src="images/collection4.jpg" alt="收藏项目">
+                    </div>
+                </div>
+                <div class="collection-count">24 个穿搭</div>
+            </div>
+            <div class="collection-info">
+                <h1 class="collection-title">我的春季穿搭灵感</h1>
+                <p class="collection-description">收集了适合春季的各种穿搭风格，包括淑女风、休闲风、街头风等多种风格，为春季着装提供多样化选择。</p>
+                <div class="collection-meta">
+                    <span class="collection-date">创建于 2023-04-15</span>
+                    <span class="collection-visibility"><i class="fas fa-lock"></i> 仅自己可见</span>
+                </div>
+            </div>
+            <div class="collection-actions">
+                <button class="action-button primary-button">
+                    <i class="fas fa-share-alt"></i>
+                    <span>分享</span>
+                </button>
+                <button class="action-button">
+                    <i class="fas fa-edit"></i>
+                    <span>编辑</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 筛选排序栏 -->
+        <div class="filter-sort-bar">
+            <div class="filter-options">
+                <span class="filter-option active">全部</span>
+                <span class="filter-option">上装</span>
+                <span class="filter-option">下装</span>
+                <span class="filter-option">鞋子</span>
+                <span class="filter-option">配饰</span>
+            </div>
+            <div class="sort-button">
+                <i class="fas fa-sort"></i>
+                <span>排序</span>
+            </div>
+        </div>
+
+        <!-- 收藏内容列表 -->
+        <div class="collection-items">
+            <!-- 收藏项目-穿搭 -->
+            <div class="collection-item outfit-item">
+                <div class="item-image">
+                    <img src="images/outfit1.jpg" alt="春季休闲风">
+                    <div class="item-type">穿搭</div>
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">春季休闲风穿搭</h3>
+                    <div class="item-meta">
+                        <span><i class="far fa-heart"></i> 128</span>
+                        <span><i class="far fa-comment"></i> 32</span>
+                    </div>
+                    <div class="item-tags">
+                        <span>休闲</span>
+                        <span>春季</span>
+                    </div>
+                </div>
+                <div class="item-actions">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <!-- 收藏项目-单品 -->
+            <div class="collection-item product-item">
+                <div class="item-image">
+                    <img src="images/product1.jpg" alt="条纹衬衫">
+                    <div class="item-type">单品</div>
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">轻薄条纹衬衫</h3>
+                    <div class="item-brand">ZARA</div>
+                    <div class="item-price">¥299</div>
+                </div>
+                <div class="item-actions">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <!-- 收藏项目-穿搭 -->
+            <div class="collection-item outfit-item">
+                <div class="item-image">
+                    <img src="images/outfit2.jpg" alt="简约通勤风">
+                    <div class="item-type">穿搭</div>
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">简约通勤风穿搭</h3>
+                    <div class="item-meta">
+                        <span><i class="far fa-heart"></i> 98</span>
+                        <span><i class="far fa-comment"></i> 15</span>
+                    </div>
+                    <div class="item-tags">
+                        <span>通勤</span>
+                        <span>简约</span>
+                    </div>
+                </div>
+                <div class="item-actions">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <!-- 收藏项目-单品 -->
+            <div class="collection-item product-item">
+                <div class="item-image">
+                    <img src="images/product2.jpg" alt="牛仔外套">
+                    <div class="item-type">单品</div>
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">复古牛仔外套</h3>
+                    <div class="item-brand">H&M</div>
+                    <div class="item-price">¥359</div>
+                </div>
+                <div class="item-actions">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <!-- 收藏项目-穿搭 -->
+            <div class="collection-item outfit-item">
+                <div class="item-image">
+                    <img src="images/outfit3.jpg" alt="约会穿搭">
+                    <div class="item-type">穿搭</div>
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">甜美约会穿搭</h3>
+                    <div class="item-meta">
+                        <span><i class="far fa-heart"></i> 156</span>
+                        <span><i class="far fa-comment"></i> 42</span>
+                    </div>
+                    <div class="item-tags">
+                        <span>约会</span>
+                        <span>甜美</span>
+                    </div>
+                </div>
+                <div class="item-actions">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <!-- 收藏项目-穿搭 -->
+            <div class="collection-item outfit-item">
+                <div class="item-image">
+                    <img src="images/outfit4.jpg" alt="度假风">
+                    <div class="item-type">穿搭</div>
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">春季度假风穿搭</h3>
+                    <div class="item-meta">
+                        <span><i class="far fa-heart"></i> 89</span>
+                        <span><i class="far fa-comment"></i> 12</span>
+                    </div>
+                    <div class="item-tags">
+                        <span>度假</span>
+                        <span>海边</span>
+                    </div>
+                </div>
+                <div class="item-actions">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 加载更多 -->
+        <div class="load-more">
+            <button class="load-more-button">加载更多</button>
+        </div>
+    </div>
+
+    <!-- 底部操作菜单 -->
+    <div class="bottom-menu">
+        <button class="menu-button add-button">
+            <i class="fas fa-plus"></i>
+            <span>添加穿搭</span>
+        </button>
+        <button class="menu-button select-button">
+            <i class="far fa-check-square"></i>
+            <span>多选</span>
+        </button>
+    </div>
+
+    <!-- 排序弹窗 -->
+    <div class="sort-modal" style="display: none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>排序方式</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-options">
+                <div class="modal-option active">
+                    <span>最近添加</span>
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="modal-option">
+                    <span>最早添加</span>
+                </div>
+                <div class="modal-option">
+                    <span>点赞数量</span>
+                </div>
+                <div class="modal-option">
+                    <span>评论数量</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目操作弹窗 -->
+    <div class="item-actions-modal" style="display: none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-options">
+                <div class="modal-option">
+                    <i class="fas fa-eye"></i>
+                    <span>查看详情</span>
+                </div>
+                <div class="modal-option">
+                    <i class="fas fa-trash-alt"></i>
+                    <span>从收藏中移除</span>
+                </div>
+                <div class="modal-option">
+                    <i class="fas fa-folder-plus"></i>
+                    <span>移动到其他收藏夹</span>
+                </div>
+                <div class="modal-option">
+                    <i class="fas fa-share-alt"></i>
+                    <span>分享</span>
+                </div>
+            </div>
+            <div class="modal-cancel">
+                <button>取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="collection-detail.js"></script>
+</body>
+</html> 

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>衣橱管理 - 莉她</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="wardrobe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- iOS状态栏 -->
+    <div class="ios-status-bar">
+        <div class="status-bar-time">12:30</div>
+        <div class="status-bar-icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="nav-bar">
+        <div class="logo">我的衣橱</div>
+        <div class="nav-actions">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-plus-circle add-item-btn"></i>
+        </div>
+    </div>
+
+    <!-- 衣物分类标签栏 -->
+    <div class="category-tabs">
+        <div class="tab active">全部</div>
+        <div class="tab">上装</div>
+        <div class="tab">下装</div>
+        <div class="tab">外套</div>
+        <div class="tab">鞋子</div>
+        <div class="tab">配饰</div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content-container">
+        <!-- 衣物统计 -->
+        <div class="wardrobe-stats">
+            <div class="stat-item">
+                <div class="stat-number">42</div>
+                <div class="stat-label">衣物总数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12</div>
+                <div class="stat-label">本季新品</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">搭配组合</div>
+            </div>
+        </div>
+
+        <!-- 筛选工具栏 -->
+        <div class="filter-toolbar">
+            <div class="filter-item">
+                <i class="fas fa-filter"></i>
+                <span>筛选</span>
+            </div>
+            <div class="filter-item">
+                <i class="fas fa-sort"></i>
+                <span>排序</span>
+            </div>
+            <div class="filter-item">
+                <i class="fas fa-th-large"></i>
+                <span>视图</span>
+            </div>
+        </div>
+
+        <!-- 衣物网格 -->
+        <div class="wardrobe-grid">
+            <!-- 衣物项 -->
+            <div class="clothing-item">
+                <div class="clothing-image">
+                    <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="白色T恤">
+                    <div class="item-category">上装</div>
+                </div>
+                <div class="clothing-info">
+                    <div class="clothing-name">基础白色T恤</div>
+                    <div class="clothing-tags">
+                        <span class="tag">休闲</span>
+                        <span class="tag">基础款</span>
+                    </div>
+                </div>
+                <div class="clothing-actions">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+
+            <div class="clothing-item">
+                <div class="clothing-image">
+                    <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="牛仔裤">
+                    <div class="item-category">下装</div>
+                </div>
+                <div class="clothing-info">
+                    <div class="clothing-name">直筒牛仔裤</div>
+                    <div class="clothing-tags">
+                        <span class="tag">休闲</span>
+                        <span class="tag">百搭</span>
+                    </div>
+                </div>
+                <div class="clothing-actions">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+
+            <div class="clothing-item">
+                <div class="clothing-image">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="白色连衣裙">
+                    <div class="item-category">连衣裙</div>
+                </div>
+                <div class="clothing-info">
+                    <div class="clothing-name">白色连衣裙</div>
+                    <div class="clothing-tags">
+                        <span class="tag">优雅</span>
+                        <span class="tag">约会</span>
+                    </div>
+                </div>
+                <div class="clothing-actions">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+
+            <div class="clothing-item">
+                <div class="clothing-image">
+                    <img src="https://images.unsplash.com/photo-1594938291221-94f18cbb5660?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="运动鞋">
+                    <div class="item-category">鞋子</div>
+                </div>
+                <div class="clothing-info">
+                    <div class="clothing-name">白色运动鞋</div>
+                    <div class="clothing-tags">
+                        <span class="tag">运动</span>
+                        <span class="tag">百搭</span>
+                    </div>
+                </div>
+                <div class="clothing-actions">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+
+            <div class="clothing-item">
+                <div class="clothing-image">
+                    <img src="https://images.unsplash.com/photo-1548126032-079a0fb0099d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="黑色西装外套">
+                    <div class="item-category">外套</div>
+                </div>
+                <div class="clothing-info">
+                    <div class="clothing-name">黑色西装外套</div>
+                    <div class="clothing-tags">
+                        <span class="tag">正式</span>
+                        <span class="tag">商务</span>
+                    </div>
+                </div>
+                <div class="clothing-actions">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+
+            <div class="clothing-item">
+                <div class="clothing-image">
+                    <img src="https://images.unsplash.com/photo-1582791694770-cbdc9dda338f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="帽子">
+                    <div class="item-category">配饰</div>
+                </div>
+                <div class="clothing-info">
+                    <div class="clothing-name">棒球帽</div>
+                    <div class="clothing-tags">
+                        <span class="tag">休闲</span>
+                        <span class="tag">户外</span>
+                    </div>
+                </div>
+                <div class="clothing-actions">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加衣物浮动按钮 -->
+    <div class="floating-add-btn">
+        <i class="fas fa-plus"></i>
+    </div>
+
+    <!-- 添加衣物模态框 (默认隐藏) -->
+    <div class="add-item-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>添加新衣物</h3>
+                <i class="fas fa-times close-modal"></i>
+            </div>
+            <div class="modal-body">
+                <div class="image-upload-container">
+                    <div class="upload-placeholder">
+                        <i class="fas fa-camera"></i>
+                        <div>点击上传图片</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>衣物名称</label>
+                    <input type="text" placeholder="请输入衣物名称">
+                </div>
+                <div class="form-group">
+                    <label>分类</label>
+                    <select>
+                        <option>请选择分类</option>
+                        <option>上装</option>
+                        <option>下装</option>
+                        <option>外套</option>
+                        <option>连衣裙</option>
+                        <option>鞋子</option>
+                        <option>配饰</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>风格标签</label>
+                    <div class="tags-container">
+                        <span class="tag selectable">休闲</span>
+                        <span class="tag selectable">正式</span>
+                        <span class="tag selectable">商务</span>
+                        <span class="tag selectable">约会</span>
+                        <span class="tag selectable">运动</span>
+                        <span class="tag selectable">派对</span>
+                        <span class="tag selectable">基础款</span>
+                        <span class="tag selectable">百搭</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>季节</label>
+                    <div class="season-selector">
+                        <div class="season-option">
+                            <input type="checkbox" id="season-spring">
+                            <label for="season-spring">春季</label>
+                        </div>
+                        <div class="season-option">
+                            <input type="checkbox" id="season-summer">
+                            <label for="season-summer">夏季</label>
+                        </div>
+                        <div class="season-option">
+                            <input type="checkbox" id="season-autumn">
+                            <label for="season-autumn">秋季</label>
+                        </div>
+                        <div class="season-option">
+                            <input type="checkbox" id="season-winter">
+                            <label for="season-winter">冬季</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn">取消</button>
+                <button class="save-btn">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- iOS底部标签栏 -->
+    <div class="tab-bar">
+        <div class="tab-item">
+            <i class="fas fa-compass"></i>
+            <span>发现</span>
+        </div>
+        <div class="tab-item active">
+            <i class="fas fa-tshirt"></i>
+            <span>衣橱</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-magic"></i>
+            <span>穿搭</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-share-alt"></i>
+            <span>社区</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-user"></i>
+            <span>我的</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="wardrobe.js"></script>
+</body>
+</html> 
