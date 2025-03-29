@@ -1,0 +1,438 @@
+/* 穿搭详情页面样式 */
+
+/* 内容区域 */
+.content-container {
+    padding: 10px 15px 80px;
+    background-color: #f8f8f8;
+}
+
+/* 导航栏 */
+.back-button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 16px;
+}
+
+/* 穿搭详情卡片 */
+.outfit-detail-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.outfit-main-image {
+    width: 100%;
+    position: relative;
+}
+
+.outfit-main-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+    display: block;
+}
+
+.outfit-info-card {
+    padding: 15px;
+}
+
+.outfit-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.author-info {
+    flex: 1;
+}
+
+.author-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.post-time {
+    font-size: 12px;
+    color: #999;
+}
+
+.follow-btn {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+}
+
+.follow-btn:active {
+    background-color: #ff5773;
+}
+
+.outfit-title-section {
+    margin-bottom: 12px;
+}
+
+.outfit-title-section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 8px 0;
+}
+
+.outfit-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.outfit-tags span {
+    font-size: 12px;
+    color: #ff6b81;
+    padding: 3px 10px;
+    background-color: #fff1f3;
+    border-radius: 12px;
+}
+
+.outfit-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.outfit-interaction {
+    display: flex;
+    border-top: 1px solid #f5f5f5;
+    padding-top: 15px;
+}
+
+.interaction-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.interaction-item i {
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+/* 穿搭组成 */
+.outfit-composition {
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.outfit-composition h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+.composition-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.composition-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.composition-item:last-child {
+    border-bottom: none;
+}
+
+.item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 12px;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.item-brand {
+    font-size: 12px;
+    color: #999;
+}
+
+.item-action {
+    margin-left: 10px;
+}
+
+.item-view-btn {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    border: 1px solid #ff6b81;
+    color: #ff6b81;
+    background-color: transparent;
+}
+
+.item-view-btn:active {
+    background-color: #fff1f3;
+}
+
+/* 评论区 */
+.comments-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.comments-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+.comment-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.comment-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.comment-input-container {
+    flex: 1;
+    display: flex;
+    height: 36px;
+    background-color: #f5f5f5;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.comment-input-container input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    padding: 0 15px;
+    background-color: transparent;
+    font-size: 14px;
+    color: #333;
+}
+
+.comment-input-container input:focus {
+    outline: none;
+}
+
+.comment-send-btn {
+    padding: 0 15px;
+    height: 100%;
+    border: none;
+    background-color: #ff6b81;
+    color: white;
+    font-size: 14px;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comment-item {
+    display: flex;
+}
+
+.comment-content {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.comment-user {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.comment-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.comment-actions {
+    display: flex;
+    font-size: 12px;
+    color: #999;
+    gap: 15px;
+}
+
+.comment-like, .comment-reply {
+    cursor: pointer;
+}
+
+.comment-like i {
+    margin-right: 3px;
+}
+
+.comment-replies {
+    margin-top: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #f0f0f0;
+}
+
+.reply-item {
+    margin-top: 10px;
+}
+
+.reply-item .comment-avatar {
+    width: 24px;
+    height: 24px;
+}
+
+.view-more-comments {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+/* 相似穿搭推荐 */
+.similar-outfits {
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.similar-outfits h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+.similar-outfits-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+}
+
+.similar-outfits-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* 底部交互栏 */
+.bottom-action-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-top: 1px solid #f0f0f0;
+    padding: 10px 15px;
+    z-index: 100;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.action-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+}
+
+.action-button i {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.action-button span {
+    font-size: 12px;
+}
+
+.action-button.active {
+    color: #ff6b81;
+}
+
+.action-button.active i.fa-heart {
+    font-weight: 900;
+}
+
+.action-button.active i.fa-bookmark {
+    font-weight: 900;
+}
+
+/* 响应式设计 */
+@media screen and (min-width: 768px) {
+    .content-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .bottom-action-bar {
+        max-width: 600px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+} 

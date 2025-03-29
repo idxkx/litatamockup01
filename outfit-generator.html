@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>穿搭生成 - 莉她</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="outfit-generator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- iOS状态栏 -->
+    <div class="ios-status-bar">
+        <div class="status-bar-time">12:30</div>
+        <div class="status-bar-icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="nav-bar">
+        <div class="logo">一键穿搭</div>
+        <div class="nav-actions">
+            <i class="fas fa-history"></i>
+        </div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content-container">
+        <!-- 穿搭设置卡片 -->
+        <div class="outfit-card">
+            <div class="card-header">
+                <h2>今日穿搭设置</h2>
+                <div class="weather">
+                    <i class="fas fa-sun"></i>
+                    <span>24°C</span>
+                </div>
+            </div>
+            
+            <!-- 场景选择 -->
+            <div class="setting-section">
+                <div class="section-title">选择场景</div>
+                <div class="scene-options">
+                    <div class="scene-option active">
+                        <i class="fas fa-briefcase"></i>
+                        <span>工作日常</span>
+                    </div>
+                    <div class="scene-option">
+                        <i class="fas fa-coffee"></i>
+                        <span>休闲日常</span>
+                    </div>
+                    <div class="scene-option">
+                        <i class="fas fa-heart"></i>
+                        <span>约会</span>
+                    </div>
+                    <div class="scene-option">
+                        <i class="fas fa-glass-cheers"></i>
+                        <span>派对</span>
+                    </div>
+                    <div class="scene-option">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>运动</span>
+                    </div>
+                    <div class="scene-option">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>学校</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 风格选择 -->
+            <div class="setting-section">
+                <div class="section-title">选择风格</div>
+                <div class="style-options">
+                    <div class="style-option active">
+                        <div class="style-color" style="background-color: #e91e63;"></div>
+                        <span>简约商务</span>
+                    </div>
+                    <div class="style-option">
+                        <div class="style-color" style="background-color: #9c27b0;"></div>
+                        <span>通勤休闲</span>
+                    </div>
+                    <div class="style-option">
+                        <div class="style-color" style="background-color: #673ab7;"></div>
+                        <span>甜美可爱</span>
+                    </div>
+                    <div class="style-option">
+                        <div class="style-color" style="background-color: #3f51b5;"></div>
+                        <span>酷帅街头</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 颜色选择 -->
+            <div class="setting-section">
+                <div class="section-title">主色调</div>
+                <div class="color-options">
+                    <div class="color-option" style="background-color: #000000;"></div>
+                    <div class="color-option" style="background-color: #ffffff; border: 1px solid #eee;"></div>
+                    <div class="color-option active" style="background-color: #2196f3;"></div>
+                    <div class="color-option" style="background-color: #4caf50;"></div>
+                    <div class="color-option" style="background-color: #f44336;"></div>
+                    <div class="color-option" style="background-color: #ff9800;"></div>
+                    <div class="color-option" style="background-color: #9c27b0;"></div>
+                    <div class="color-option" style="background-color: #795548;"></div>
+                </div>
+            </div>
+            
+            <!-- 生成按钮 -->
+            <div class="generate-section">
+                <button class="generate-btn">
+                    <i class="fas fa-magic"></i>
+                    <span>一键生成穿搭</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 穿搭结果区域 (初始隐藏) -->
+        <div class="result-container" style="display: none;">
+            <div class="result-header">
+                <h2>为您推荐的穿搭</h2>
+                <div class="result-actions">
+                    <i class="fas fa-redo-alt"></i>
+                    <i class="fas fa-share-alt"></i>
+                </div>
+            </div>
+            
+            <!-- 穿搭组合展示 -->
+            <div class="outfit-combination">
+                <!-- 穿搭图 -->
+                <div class="outfit-preview">
+                    <img src="https://images.unsplash.com/photo-1603189343302-e603f7add05a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="穿搭预览">
+                </div>
+                
+                <!-- 穿搭组成部分 -->
+                <div class="outfit-items">
+                    <div class="outfit-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="蓝色衬衫">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-name">简约蓝色衬衫</div>
+                            <div class="item-category">上衣</div>
+                        </div>
+                    </div>
+                    
+                    <div class="outfit-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="黑色西裤">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-name">商务黑色西裤</div>
+                            <div class="item-category">下装</div>
+                        </div>
+                    </div>
+                    
+                    <div class="outfit-item">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1519810755548-39cd217da494?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="棕色皮鞋">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-name">棕色商务皮鞋</div>
+                            <div class="item-category">鞋子</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 穿搭说明 -->
+                <div class="outfit-description">
+                    <div class="description-title">穿搭点评</div>
+                    <div class="description-content">
+                        蓝色衬衫搭配黑色西裤，给人干练精神的商务形象，搭配棕色皮鞋增添一抹暖色调，适合日常办公室工作场景。
+                    </div>
+                </div>
+                
+                <!-- 穿搭操作 -->
+                <div class="outfit-actions">
+                    <button class="save-outfit-btn">保存到我的穿搭</button>
+                    <button class="share-outfit-btn">分享到社区</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 穿搭历史记录 -->
+        <div class="history-section">
+            <div class="section-header">
+                <h2>历史穿搭</h2>
+                <span class="view-all">查看全部</span>
+            </div>
+            <div class="history-list">
+                <div class="history-item">
+                    <div class="history-image">
+                        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="历史穿搭1">
+                    </div>
+                    <div class="history-info">
+                        <div class="history-title">休闲通勤风</div>
+                        <div class="history-date">5月12日 · 工作日常</div>
+                    </div>
+                </div>
+                
+                <div class="history-item">
+                    <div class="history-image">
+                        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="历史穿搭2">
+                    </div>
+                    <div class="history-info">
+                        <div class="history-title">周末约会装</div>
+                        <div class="history-date">5月8日 · 约会</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- iOS底部标签栏 -->
+    <div class="tab-bar">
+        <div class="tab-item">
+            <i class="fas fa-compass"></i>
+            <span>发现</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-tshirt"></i>
+            <span>衣橱</span>
+        </div>
+        <div class="tab-item active">
+            <i class="fas fa-magic"></i>
+            <span>穿搭</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-share-alt"></i>
+            <span>社区</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-user"></i>
+            <span>我的</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="outfit-generator.js"></script>
+</body>
+</html> 

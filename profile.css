@@ -1,0 +1,769 @@
+/* 个人中心页面专用样式 */
+
+/* 内容区域 */
+.content-container {
+    padding: 10px 15px 80px;
+    background-color: #f8f8f8;
+}
+
+/* 个人信息卡片 */
+.profile-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile-cover {
+    height: 100px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    position: relative;
+}
+
+.edit-cover {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.profile-info {
+    padding: 0 15px 15px;
+    position: relative;
+}
+
+.profile-avatar-container {
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+    position: relative;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-avatar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #ff6b81;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+}
+
+.profile-detail {
+    margin-top: 10px;
+}
+
+.profile-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.profile-id {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.profile-bio {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.edit-profile-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.edit-profile-btn i {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.profile-stats {
+    display: flex;
+    border-top: 1px solid #f0f0f0;
+    padding: 12px 0;
+}
+
+.profile-stats .stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-stats .stat-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.profile-stats .stat-label {
+    font-size: 12px;
+    color: #999;
+}
+
+/* 会员卡片 */
+.vip-card {
+    background: linear-gradient(to right, #fad0c4, #ffd1ff);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.vip-info {
+    display: flex;
+    align-items: center;
+}
+
+.vip-info i {
+    font-size: 18px;
+    color: #ff9800;
+    margin-right: 8px;
+}
+
+.vip-level {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.vip-action {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #666;
+}
+
+.vip-action i {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+/* 功能入口 */
+.feature-entries {
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.entry-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 15px 0;
+}
+
+.entry-group:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.entry-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.entry-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.entry-icon i {
+    font-size: 18px;
+}
+
+.entry-name {
+    font-size: 12px;
+    color: #666;
+}
+
+/* 我的穿搭 */
+.my-outfits-section, .my-collections-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.section-more {
+    font-size: 13px;
+    color: #999;
+}
+
+.outfits-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+}
+
+.outfits-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.outfit-item {
+    flex: 0 0 auto;
+    width: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.outfit-image {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+}
+
+.outfit-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.outfit-info {
+    padding: 8px;
+}
+
+.outfit-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.outfit-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #999;
+}
+
+.outfit-stats i {
+    margin-right: 3px;
+}
+
+/* 我的收藏 */
+.collections-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+}
+
+.collections-container::-webkit-scrollbar {
+    display: none;
+}
+
+.collection-item {
+    flex: 0 0 auto;
+    width: 160px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.collection-image {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.collection-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.collection-author {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    padding: 10px 8px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.collection-author img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-right: 6px;
+}
+
+.collection-author span {
+    font-size: 10px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.collection-info {
+    padding: 8px;
+}
+
+.collection-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.collection-tags span {
+    font-size: 10px;
+    color: #ff6b81;
+}
+
+/* 编辑资料弹窗 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    width: 90%;
+    max-width: 340px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.modal-close {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    cursor: pointer;
+}
+
+.modal-close:active {
+    background-color: #e5e5e5;
+}
+
+.modal-content {
+    padding: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #ff6b81;
+    outline: none;
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: none;
+}
+
+.avatar-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #ff6b81;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+
+.bio-counter {
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+}
+
+.cancel-btn {
+    background-color: #f5f5f5;
+    color: #666;
+    margin-right: 10px;
+}
+
+.save-btn {
+    background-color: #ff6b81;
+    color: white;
+}
+
+.cancel-btn:active {
+    background-color: #e5e5e5;
+}
+
+.save-btn:active {
+    background-color: #ff5773;
+}
+
+/* 会员权益弹窗 */
+.vip-modal {
+    max-width: 360px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.vip-modal-header {
+    background: linear-gradient(to right, #fad0c4, #ffd1ff);
+    border-bottom: none;
+}
+
+.vip-modal-header h3 {
+    color: #333;
+}
+
+.vip-card-large {
+    background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.vip-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.vip-icon-large {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.vip-icon-large i {
+    font-size: 24px;
+    color: #ff9800;
+}
+
+.vip-info-large {
+    flex: 1;
+}
+
+.vip-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.vip-expiry {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.vip-level-progress {
+    margin-top: 10px;
+}
+
+.level-text {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-inner {
+    height: 100%;
+    background-color: #ff9800;
+    border-radius: 3px;
+}
+
+.level-status {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.next-level {
+    color: #ff9800;
+    font-weight: 500;
+}
+
+.level-points {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.benefits-list {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.benefits-list h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.benefit-item:last-child {
+    border-bottom: none;
+}
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.benefit-icon i {
+    font-size: 18px;
+}
+
+.benefit-info {
+    flex: 1;
+}
+
+.benefit-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.benefit-desc {
+    font-size: 12px;
+    color: #999;
+}
+
+.upgrade-vip-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.upgrade-vip-btn {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(255, 107, 129, 0.2);
+}
+
+.upgrade-vip-btn:active {
+    background-color: #ff5773;
+    transform: translateY(1px);
+}
+
+.upgrade-vip-desc {
+    font-size: 12px;
+    color: #999;
+    margin-top: 8px;
+}
+
+/* 响应式设计 */
+@media screen and (min-width: 768px) {
+    .content-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+} 

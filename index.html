@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>莉她 - 智能穿搭助手</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- iOS状态栏 -->
+    <div class="ios-status-bar">
+        <div class="status-bar-time">12:30</div>
+        <div class="status-bar-icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="nav-bar">
+        <div class="logo">莉她</div>
+        <div class="nav-actions">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content-container">
+        <!-- 今日穿搭推荐 -->
+        <section class="today-outfit">
+            <div class="section-header">
+                <h2>今日穿搭</h2>
+                <span class="weather">晴 24°C</span>
+            </div>
+            <div class="outfit-card">
+                <div class="outfit-image">
+                    <img src="https://images.unsplash.com/photo-1589465885857-44edb59bbff2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="今日穿搭推荐">
+                </div>
+                <div class="outfit-info">
+                    <div class="outfit-title">清爽休闲风</div>
+                    <div class="outfit-description">适合今日天气，轻松出行</div>
+                    <button class="primary-button">一键生成</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 精选穿搭 -->
+        <section class="featured-outfits">
+            <div class="section-header">
+                <h2>精选穿搭</h2>
+                <span class="view-all">查看全部</span>
+            </div>
+            <div class="outfit-scroll">
+                <div class="outfit-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="穿搭1">
+                    <div class="outfit-item-title">办公室精英</div>
+                </div>
+                <div class="outfit-item">
+                    <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="穿搭2">
+                    <div class="outfit-item-title">周末休闲</div>
+                </div>
+                <div class="outfit-item">
+                    <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="穿搭3">
+                    <div class="outfit-item-title">约会穿搭</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门穿搭 -->
+        <section class="popular-outfits">
+            <div class="section-header">
+                <h2>热门穿搭</h2>
+                <span class="view-all">查看全部</span>
+            </div>
+            <div class="outfit-grid">
+                <div class="popular-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="热门穿搭1">
+                    </div>
+                    <div class="item-info">
+                        <div class="user-info">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="用户头像" class="user-avatar">
+                            <span class="user-name">小莉</span>
+                        </div>
+                        <div class="item-stats">
+                            <span><i class="fas fa-heart"></i> 2.3k</span>
+                            <span><i class="fas fa-comment"></i> 128</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="热门穿搭2">
+                    </div>
+                    <div class="item-info">
+                        <div class="user-info">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="用户头像" class="user-avatar">
+                            <span class="user-name">琳达</span>
+                        </div>
+                        <div class="item-stats">
+                            <span><i class="fas fa-heart"></i> 1.8k</span>
+                            <span><i class="fas fa-comment"></i> 92</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 快速穿搭 -->
+        <section class="quick-outfit">
+            <div class="section-header">
+                <h2>快速穿搭</h2>
+            </div>
+            <div class="quick-outfit-grid">
+                <div class="quick-outfit-item">
+                    <div class="quick-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="quick-title">上班族</div>
+                </div>
+                <div class="quick-outfit-item">
+                    <div class="quick-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="quick-title">学生党</div>
+                </div>
+                <div class="quick-outfit-item">
+                    <div class="quick-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="quick-title">约会</div>
+                </div>
+                <div class="quick-outfit-item">
+                    <div class="quick-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <div class="quick-title">派对</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- iOS底部标签栏 -->
+    <div class="tab-bar">
+        <div class="tab-item active">
+            <i class="fas fa-compass"></i>
+            <span>发现</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-tshirt"></i>
+            <span>衣橱</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-magic"></i>
+            <span>穿搭</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-share-alt"></i>
+            <span>社区</span>
+        </div>
+        <div class="tab-item">
+            <i class="fas fa-user"></i>
+            <span>我的</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
