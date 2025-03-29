@@ -44,6 +44,7 @@
 - `collection-detail.css` - 收藏详情页的样式
 - `collection-detail.js` - 收藏详情页的交互功能
 - `device-demo.html` - iPhone 16 Pro Max设备演示页面，以真实设备形式展示应用
+
 - 其他页面文件（开发中）
 
 ## 使用技术
@@ -58,6 +59,7 @@
 2. 直接打开 `index.html`、`wardrobe.html` 或 `outfit-generator.html` 文件在浏览器中查看
 3. 建议使用移动设备模式查看，以获得最佳体验
 4. 打开 `device-demo.html` 可在模拟iPhone设备中查看应用效果
+
 
 ## 页面说明
 
@@ -235,6 +237,7 @@
 
 - 邮箱：chensi@litata.com
 - 官网：www.litata.com (建设中)
+
 
 ## 技术特点
 
