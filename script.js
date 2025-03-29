@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 模拟iOS页面转场效果
     setupPageTransitions();
+    
+    // 设置快速穿搭交互
+    setupQuickOutfitInteraction();
 });
 
 // 更新状态栏时间
@@ -221,6 +224,149 @@ function setupPageTransitions() {
             console.log(`查看全部 ${sectionTitle}`);
             showToast(`正在加载更多${sectionTitle}...`);
         });
+    });
+}
+
+// 设置快速穿搭交互
+function setupQuickOutfitInteraction() {
+    const quickOutfitItems = document.querySelectorAll('.quick-outfit-item');
+    
+    quickOutfitItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // 获取场景名称
+            const sceneName = this.querySelector('.quick-title').textContent;
+            
+            // 添加点击反馈样式
+            this.classList.add('active');
+            
+            // 显示加载提示
+            showToast(`正在为您生成${sceneName}场景穿搭...`);
+            
+            // 模拟加载，500ms后显示生成结果
+            setTimeout(() => {
+                // 移除点击反馈样式
+                this.classList.remove('active');
+                
+                // 模拟打开场景穿搭页面
+                showSceneOutfitModal(sceneName);
+            }, 500);
+        });
+    });
+}
+
+// 显示场景穿搭模态框
+function showSceneOutfitModal(sceneName) {
+    // 检查是否已存在模态框
+    let modal = document.querySelector('.scene-outfit-modal');
+    
+    // 如果不存在，创建新的模态框
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.className = 'scene-outfit-modal';
+        document.body.appendChild(modal);
+    }
+    
+    // 根据不同场景准备不同的穿搭建议和图片
+    let outfitImage, outfitTitle, outfitDescription;
+    
+    switch(sceneName) {
+        case '上班族':
+            outfitImage = 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
+            outfitTitle = '职场精英风格';
+            outfitDescription = '简约大气的西装搭配修身裤装，展现职场自信与专业形象';
+            break;
+        case '学生党':
+            outfitImage = 'https://images.unsplash.com/photo-1613375920388-f1f70f341431?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
+            outfitTitle = '青春校园风格';
+            outfitDescription = '舒适休闲的T恤搭配牛仔裤，活力清新又不失时尚感';
+            break;
+        case '约会':
+            outfitImage = 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
+            outfitTitle = '浪漫约会风格';
+            outfitDescription = '精致优雅的连衣裙搭配细节配饰，展现甜美气质吸引眼球';
+            break;
+        case '派对':
+            outfitImage = 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
+            outfitTitle = '活力派对风格';
+            outfitDescription = '亮色系单品搭配个性饰品，成为派对焦点散发独特魅力';
+            break;
+        default:
+            outfitImage = 'https://images.unsplash.com/photo-1589465885857-44edb59bbff2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
+            outfitTitle = '日常休闲风格';
+            outfitDescription = '舒适百搭的单品组合，轻松应对各种日常场景';
+    }
+    
+    // 设置模态框内容
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>${sceneName}穿搭推荐</h3>
+                <i class="fas fa-times close-modal"></i>
+            </div>
+            <div class="modal-body">
+                <div class="outfit-preview">
+                    <img src="${outfitImage}" alt="${sceneName}穿搭">
+                </div>
+                <div class="outfit-details">
+                    <h4>${outfitTitle}</h4>
+                    <p>${outfitDescription}</p>
+                    <div class="outfit-items">
+                        <div class="outfit-item-tag">上装: 白色衬衫/T恤</div>
+                        <div class="outfit-item-tag">下装: 修身长裤/裙装</div>
+                        <div class="outfit-item-tag">鞋子: 百搭平底鞋/小皮鞋</div>
+                        <div class="outfit-item-tag">配饰: 简约手表/项链</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="save-outfit-btn">保存到我的穿搭</button>
+                <button class="try-outfit-btn">试试看</button>
+            </div>
+        </div>
+    `;
+    
+    // 显示模态框
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+    
+    // 绑定关闭事件
+    const closeBtn = modal.querySelector('.close-modal');
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            if (modal.parentNode) {
+                modal.parentNode.removeChild(modal);
+            }
+        }, 300);
+    });
+    
+    // 绑定按钮点击事件
+    const saveBtn = modal.querySelector('.save-outfit-btn');
+    const tryBtn = modal.querySelector('.try-outfit-btn');
+    
+    saveBtn.addEventListener('click', () => {
+        showToast('已保存到我的穿搭');
+        setTimeout(() => {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                if (modal.parentNode) {
+                    modal.parentNode.removeChild(modal);
+                }
+            }, 300);
+        }, 1000);
+    });
+    
+    tryBtn.addEventListener('click', () => {
+        showToast('正在为您搭配衣橱中的相似单品...');
+        setTimeout(() => {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                if (modal.parentNode) {
+                    modal.parentNode.removeChild(modal);
+                }
+            }, 300);
+        }, 1000);
     });
 }
 
